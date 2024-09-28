@@ -1,0 +1,291 @@
+@import '@/styles/main.scss';
+
+
+
+.footer {
+    background: #FAFAFA;
+    padding-top: 7.9em;
+    padding-bottom: 8.035em;
+    @at-root .container {
+        width: 73.35%;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-areas: 'brand useful help resources'
+                                    'brand . . .'
+                                    'rights rights rights rights';
+        grid-template-columns: 1fr repeat(3, max-content);
+        column-gap: 10.6em;;
+        row-gap: 4.565em;
+
+        @at-root .brandCol {
+            grid-area: brand;
+            @at-root .brandLogoRow {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                span {
+                    @include typo($font-family: $font-dm-sans,
+                    $font-size: 3.6em,
+                    $line-height: 1.3em,
+                    $font-weight: 700,
+                    $letter-spacing: -0.02em,
+                    $text-align: left,
+                    $color: #141f39);
+                }
+            }
+
+            @at-root .brandDesc {
+                @include typo($font-family: $font-chivo,
+                    $font-size: 1.6em,
+                    $line-height: 1.625em,
+                    $font-weight: 400,
+                    $text-align: left,
+                    $color: #141f39);
+                margin-top: 1.43em;
+                width: 35ch;
+            }
+
+            @at-root .brandPhone {
+                margin-top: 2.4em;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                span {
+                    @include typo($font-family: $font-chivo,
+                    $font-size: 1.6em,
+                    $line-height: 1.625em,
+                    $font-weight: 400,
+                    $text-align: left,
+                    $color: #141f39);
+                    margin-left: 10px;
+                }
+            }
+
+            @at-root .brandEmail {
+                margin-top: 1.2em;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+    
+
+                span {
+                    @include typo($font-family: $font-chivo,
+                    $font-size: 1.6em,
+                    $line-height: 1.625em,
+                    $font-weight: 400,
+                    $text-align: left,
+                    $color: #141f39);
+                    margin-left: 10px;
+                }
+            }
+
+            @at-root .brandBtns {
+                margin-top: 2.4em;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 2.4em;
+
+                @at-root .btnSpot {
+                    
+                    @at-root .btn {
+                        width: 16.9em;
+                        height: 5.3em;
+                        position: relative;
+
+                        @at-root .btnImg {
+
+                        }
+                    }
+                }
+            }
+            @at-root .head {
+                @include typo($font-family: $font-chivo,
+                $font-size: 1.6em,
+                $line-height: 1.42em,
+                $font-weight: 700,
+                $text-align: left,
+                $color: #141f38);
+                margin-top: 1.56em;
+
+
+            }   
+            @at-root .item {
+                @include typo($font-family: $font-chivo,
+                $font-size: 1.6em,
+                $line-height: 1.625em,
+                $font-weight: 400,
+                $text-align: left,
+                $color: #52525B);
+
+                &:not(:first-child){
+                    margin-top: 0.75em;
+                }
+                &:first-child {
+                    margin-top: 0.875em;
+                }
+
+            }  
+
+            @at-root .usefulColumn {
+                grid-area: useful;
+                .head {
+
+                }   
+                .item {
+
+                }             
+            }
+
+            @at-root .helpCol {
+                grid-area: help;
+                .head {
+
+                }   
+                .item {
+                    
+                }             
+            }
+
+            @at-root .resourcesCol {
+                grid-area: resources;
+                .head {
+
+                }   
+                .item {
+                    
+                }             
+            }
+
+            @at-root .rightsReserved {
+                grid-area: rights;
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                align-items: center;
+                @at-root .rightsText {
+                    @include typo($font-family: $font-chivo,
+                    $font-size: 1.4em,
+                    $line-height: 1.42em,
+                    $font-weight: 400,
+                    $text-align: right,
+                    $color:#52525B
+                    );
+
+
+                }
+
+                @at-root .socials {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 2.4em;
+                   
+                    @at-root .social {
+                        width: 1.8em;
+                        height: 1.8em;
+                        position: relative;
+
+                        @at-root .socialImg {
+
+                        }
+                    }
+                }
+            }
+            
+        }
+        @media (max-width: 1447px){
+            column-gap: 5em;
+        }
+        @media (max-width: 1213px){
+            grid-template-areas: 'brand useful help'
+            'brand resources .'
+            'rights resources .';
+            grid-template-columns: 1fr repeat(2, max-content);
+            row-gap: 1.565em;
+
+            .rightsReserved {
+                flex-direction: column-reverse;
+                align-items: flex-start;
+                .rightsText {
+                    margin-top: 1em;
+                }
+            }
+            .resourcesCol .head {
+                margin-top: 0;
+            }
+        }
+        @media (max-width: 1050px){
+            column-gap: 2em;
+            width: 85%;
+            .brandBtns {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5em;
+            }
+            .socials {
+                margin-top: 2em;   
+            }
+        }
+        @media (max-width: 824px){
+            grid-template-areas: 'brand useful'
+            'brand help'
+            'rights resources'
+            'rights resources';
+            grid-template-columns: 1fr repeat(2, max-content);
+            row-gap: 1.565em;
+
+            .helpCol .head {
+                margin-top: 0;
+            }
+            .rightsReserved {
+                justify-content: flex-start;
+
+                .socials {
+                    // flex-direction: column;
+                }
+            }
+        }
+        @media (max-width: 700px){
+            grid-template-areas: 'useful help'
+            'resources resources'
+            'brand brand'
+            'rights rights';
+            grid-template-columns: repeat(2, 1fr);
+
+            
+            .brandCol {
+                margin-top: 2em;
+            }
+            .usefulColumn .head {
+                margin-top: 0;
+            }
+       
+        }
+     
+        @media (max-width: 500px){
+            width: 95%;
+            grid-template-areas: 'useful'
+            'help'
+            'resources'
+            'brand'
+            'rights';
+            grid-template-columns: 1fr;
+
+            .brandDesc {
+                width: unset
+            }
+        }
+    }
+    @media (max-width: 1213px){
+        padding-top: 4em;
+        padding-bottom: 4em;
+    }
+    @media (max-width: 500px){
+        padding-top: 3em;
+        padding-bottom: 2em;
+    }
+}

@@ -1,0 +1,77 @@
+@import '@/styles/main.scss';
+
+
+@at-root .roban {
+    background-color: #15bee3;
+
+    @at-root .container {
+        width: 76%;
+        max-width: 119.3em;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        padding-top: 3.4em;
+        padding-bottom: 3.4em;
+        justify-content: space-between;
+  
+        
+        
+        @at-root .brandBox {
+        
+            .brand {
+                
+            }
+        }
+
+        @media (max-width: 1100px){
+            width: 90%;
+        }
+        @media (max-width: 914px){
+            display: grid;
+            grid-template-areas: '. A B .' '. C D .';
+            grid-template-columns: 1fr max-content max-content 1fr;
+            row-gap: 5em;
+            justify-content: center;
+            column-gap: 4em;
+            
+            .brandBox {
+               
+                &:nth-child(1){
+                    grid-area: A;
+                }
+                &:nth-child(2){
+                    grid-area: B;
+                }
+                &:nth-child(3){
+                    grid-area: C;
+                }
+                &:nth-child(4){
+                    grid-area: D;
+                }
+
+            }
+        }
+        
+        @media (max-width: 533px){
+            display: flex;
+            flex-direction: column;
+            gap: 4em;
+            align-items: center;
+            grid-template-areas: 'A' 'B' 'C' 'D';
+            grid-template-columns: 1fr;
+        }
+    }
+    @media (max-width: 1200px){
+        padding-top: 10em;
+        padding-bottom: 10em;
+    }
+    @media (max-width: 1000px){
+        padding-top: 8em;
+        padding-bottom: 8em;
+    }
+    @media (max-width: 500px){
+        padding-top: 5em;
+        padding-bottom: 5em;
+    }
+    
+}

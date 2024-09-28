@@ -1,0 +1,84 @@
+@import '@/styles/main.scss';
+
+
+
+.carousel {
+
+    @at-root .btnRow {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+
+        @at-root .btnSpot {
+
+            @at-root .btn {
+                width: 5em;
+                height: 5em;
+                background-color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover {
+                    background-color: #1B2114;
+                    opacity: 30%;
+
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    position: relative;
+                    width: 18px;
+                    height: 14.5px;
+
+
+                }
+
+                @at-root .btnLeft {
+                    margin-right: 1.24em;
+
+                    &::after {
+                        background-image: url('../../images/leftArrow.svg');
+                        background-size: contain;
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                    }
+
+
+                    &:hover::after {
+                        background-image: url('../../images/arrowHover.svg');
+                        transform: rotateZ(180deg);
+
+                    }
+
+                }
+
+                @at-root .btnRight {
+                    margin-right: 5.14em;;
+                    &::after {
+                        background-image: url('../../images/leftArrow.svg');
+                        background-size: contain;
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        transform: rotateZ(180deg);
+
+                    }
+
+                    &:hover::after {
+                        background-image: url('../../images/arrowHover.svg');
+                        transform: rotateZ(0deg);
+
+                    }
+                }
+            }
+        }
+    }
+
+    @at-root .cards {
+        display: flex;
+        margin-top: 6.4em;
+
+        @at-root .cardSpot {}
+    }
+}

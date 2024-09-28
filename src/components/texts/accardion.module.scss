@@ -1,0 +1,35 @@
+@import '@/styles/main.scss';
+
+
+
+.accardion {
+    padding-top: 3.2em;
+    padding-bottom: 3.2em;
+    cursor: pointer;
+   
+
+    @at-root .head {
+        @include typo($font-family: $font-jakarta,
+        $font-size: 3.2em,
+        $line-height: 1.4em,
+        $font-weight: 700,
+        $letter-spacing: -1px,
+        $text-align: left,
+        $color: white);
+        span {
+            margin-left: 1em;
+        }
+    }
+    @at-root .desc {
+        @include typo($font-family: $font-jakarta,
+        $font-size: 1.6em,
+        $line-height: 1.6em,
+        $font-weight: 400,
+        $letter-spacing: -1px,
+        $text-align: left,
+        $color: white);
+        max-width: 33.43em;
+        opacity: 70%;
+        margin-top: 1.5em;
+    }
+}

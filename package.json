@@ -1,0 +1,25 @@
+{
+  "name": "stdev",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "css-loader": "^7.1.2",
+    "loader-utils": "^3.3.1",
+    "next": "^14.2.13",
+    "react": "^18",
+    "react-dom": "^18",
+    "sass": "^1.79.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.5",
+    "@types/react": "^18.3.7",
+    "@types/react-dom": "^18",
+    "typescript": "^5.6.2"
+  }
+}

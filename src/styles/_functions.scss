@@ -1,0 +1,29 @@
+@function font-size-a($base-screen-width,$base-font-size,$small-screen-width,$small-font-size){
+
+    @return (($small-font-size * $base-screen-width) - ($base-font-size * $small-screen-width))/(($html---font-size * $default-browser-font-size) * ($base-screen-width - $small-screen-width));
+}
+
+@function font-size-b($base-screen-width,$base-font-size,$small-screen-width,$small-font-size){
+
+    @return (($base-font-size - $small-font-size)/($base-screen-width - $small-screen-width));
+}
+
+
+@function toRGB ($color) {
+    @return "rgb(" + red($color) + ", " + green($color) + ", " + blue($color)+ ")";
+}
+
+
+@function pxToEm($value, $baseValue) {
+    @return $value/$baseValue+em;
+}
+
+
+@function calcPercentage($value, $baseValue) {
+    @return ($value/$baseValue)*100%;
+}
+
+
+@function calcVw($value, $baseValue) {
+    @return ($value/$baseValue)*100+vw;
+}

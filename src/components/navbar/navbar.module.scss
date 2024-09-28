@@ -1,0 +1,218 @@
+// src/components/styles/Navbar.module.scss
+@import '@/styles/main.scss';
+
+
+$text-color: #ffffff;
+// $breakpoint-1: 768px;
+
+
+.navbar {
+  font-size: 10px; //1600px
+  background-color: $primary-color;
+  position: relative;
+
+  @at-root .container {
+    width: 73%; //1174px
+    max-width: 117.4em;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 4em;
+    // padding-bottom: 4em;
+
+
+    @at-root .logo {
+      display: flex;
+      align-items: center;
+
+
+      img {
+        width: 40px;
+        height: 40px;
+        margin-right: 1.2em;
+      }
+
+      span {
+        color: $text-color;
+        font-size: 3.6em;
+        font-weight: 700;
+        font-family: $font-dm-sans;
+
+      }
+    }
+
+    @at-root .navItems {
+      display: flex;
+      flex-direction: row;
+      flex: 1;
+      list-style: none;
+      gap: 3em;
+      margin-right: 8.5em;
+      border: none;
+      outline: none;
+
+      li {
+        a {
+          color: $text-color;
+          text-decoration: none;
+          font-size: 1.6em;
+          font-family: $font-inter;
+
+          &:hover {
+            color: lighten($text-color, 20%);
+          }
+        }
+
+        &:first-child {
+          margin-left: auto;
+        }
+      }
+
+
+
+      &.navItemsOpen {
+        background-color: $primary-color;
+      }
+
+    }
+
+    @at-root .navButton {
+      width: 16.7em; //167px
+      height: 6.618em; //61.68px
+      font-family: $font-inter;
+
+
+    }
+
+    @at-root .hamburger {
+      display: none;
+      width: 40px;
+      height: 40px;
+      // display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      cursor: pointer;
+      position: relative;
+
+      .hamburgerLine {
+        display: block;
+        width: 100%;
+        height: 4px;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+        background-color: $text-color;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      }
+
+      &.hamburgerOpen {
+        $x : 9.5px;
+        $y : 9.5px;
+        .hamburgerLine:nth-child(1){
+          transform: rotate(45deg) translate($x, $y);
+        }
+        .hamburgerLine:nth-child(2){
+          opacity: 0;
+        }
+        .hamburgerLine:nth-child(3){
+          transform: rotate(-45deg) translate($x, -$y);
+        }
+      }
+
+
+    }
+
+
+
+
+    @media (max-width: 1350px) {
+      padding-top: 2em;
+      width: 90%;
+    }
+
+    @media (max-width: 1100px) {
+     
+      width: 95%;
+
+      .navItems {
+        margin-right: 5em;
+      }
+    }
+
+    @media (max-width: 950px) {
+      width: 85%;
+      padding-bottom: 4em;
+      justify-content: space-between;
+
+      .hamburger {
+        display: flex;
+      }
+
+      .navButton {
+        display: none;
+      }
+
+      .navItems:not(.navItemsOpen) {
+        display: none;
+      }
+
+      .navItemsOpen {
+        display: flex;
+        position: absolute;
+        font-size: 1.5em;
+        padding-top: 1em;
+        padding-left: 5em;
+        padding-bottom: 14em;
+        z-index: 1;
+        top: 100%;
+        width: 100%;
+        right: 0;
+        left: 0;
+        flex: unset;
+        // display: flex;
+        flex-direction: column;
+        border: none;
+        outline: none;
+        gap: 0;
+        background-color: $primary-color;
+        margin-right: 0;
+
+        li {
+          letter-spacing: 0.5em;
+        }
+        li:first-child {
+          margin-left: 0;
+        }
+
+        li:not(first-child) {
+          margin-top: 2em;
+        }
+
+        transition: all 1s ease-in 0;
+      }
+
+      .navItemsOpen~.navButton {
+        display: block;
+        position: absolute;
+        z-index: 2;
+        left: 7.5em;
+        top: 58em;
+      }
+
+    }
+
+    @media (max-width: 650px) {
+     
+      .navItemsOpen {
+        align-items: center;
+        padding-left: 0;
+      }
+
+      .navItemsOpen~.navButton {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

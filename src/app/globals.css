@@ -1,0 +1,132 @@
+@font-face {
+  font-family: 'DM_SANS';
+  src: url('../fonts/DM_Sans/DMSans-Italic-VariableFont_opsz\,wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DM_SANS_ITALIC';
+  src: url('../fonts/DM_Sans/DMSans-Italic-VariableFont_opsz\,wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'INTER';
+  src: url('../fonts/Inter/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'INTER_ITALIC';
+  src: url('../fonts/Inter/Inter-Italic-VariableFont_opsz\,wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'PLUS_JAKARTA_SANS';
+  src: url('../fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PLUS_JAKARTA_SANS_ITALIC';
+  src: url('../fonts/Plus_Jakarta_Sans/PlusJakartaSans-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'CHIVO';
+  src: url('../fonts/chivo/Chivo-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CHIVO_ITALIC';
+  src: url('../fonts/chivo/Chivo-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+html, body {
+  height: 100%;
+  line-height: 1.5;
+}
+
+body {
+  font-size: 10px;
+  /* background-color: rgba(255, 0, 0, 0.26); */
+  
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+  content: '';
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Button Reset */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Links reset */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Prevents the annoying tap highlight on touch devices */
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Form elements */
+input, textarea {
+  outline: none;
+}
+

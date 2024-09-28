@@ -1,0 +1,245 @@
+@import '@/styles/main.scss';
+
+
+
+
+.performance {
+    padding-top: 18.4em;
+    padding-bottom: 12em;
+    background-color: $primary-color;
+    
+    @at-root .container {
+        width: 73%;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-areas: 'A A''B C';
+        grid-template-columns: min-content min-content;
+        justify-content: center;
+        column-gap: 2em;
+        row-gap: 5.7em;
+
+        @at-root .textBoxA {
+            grid-area: A;
+            max-width: 89em;
+            justify-self: center;
+
+            h2 {
+                @include typo($font-family: $font-jakarta,
+                    $font-size: 4.8em,
+                    $line-height: 1.4em,
+                    $font-weight: 700,
+                    $letter-spacing: -1px,
+                    $text-align: center,
+                    $color: white);
+                position: relative;
+                z-index: 0;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 5.95em;
+                    height: 4.68em;
+                    background-image: url('../../images/khal3.png');
+                    background-size: cover;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    left: 1em;
+                    top: -1em;
+                    z-index: -1;
+                }
+            }
+
+            p {
+                @include typo($font-family: $font-inter,
+                    $font-size: 1.6em,
+                    $line-height: 1.6em,
+                    $font-weight: 400,
+                    $letter-spacing: -1px,
+                    $text-align: center,
+                    $color: white);
+                opacity: 70%;
+                margin-top: 1em;
+            }
+        }
+        @at-root .textList {
+            grid-area: B;
+            width: 67em;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            border-top: 1px solid #D4D4D8;
+           
+            
+    
+            @at-root .textItem {
+                border-bottom: 0.2px solid #D4D4D8;
+                
+               
+            }
+        }
+        @at-root .imgCol {
+            width: 47em;
+            // height: 56.8em;
+            grid-area: C;
+            position: relative;
+            z-index: 0;
+            border-radius: 16px;
+            
+    
+            @at-root .imgBox {
+                width: 100%;
+                padding-top: 120.8%;
+                position: relative;
+    
+                @at-root .img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+
+                }
+    
+            }
+    
+            @at-root .tooltip {
+                position: absolute;
+                width: 20.4em;
+                z-index: 1;
+                top: 5.8em;
+                left: 0;
+                padding-left: 2.6em;
+                padding-top: 2.6em;
+                padding-bottom: 2.5em;
+                padding-right: 6.6em;
+                transform: translateX(-50%);
+                background-color: white;
+                opacity: 90%;
+                box-shadow: 0px 42.56px 85.12px 0px #2038550D;
+                border-radius: 10px;
+    
+                .percent {
+                    @include typo($font-family: $font-jakarta,
+                        $font-size: 4.8em,
+                        $line-height: 1.4em,
+                        $font-weight: 800,
+                        $letter-spacing: -1px,
+                        $text-align: left,
+                        $color: #141f39);
+                }
+    
+                .body {
+                    @include typo($font-family: $font-inter,
+                        $font-size: 1.8em,
+                        $line-height: 1.418em,
+                        $font-weight: 500,
+                        $letter-spacing: -1px,
+                        $text-align: left,
+                        $color: #141f39);
+                }
+            }
+        }
+        @media (max-width: 1580px){
+            grid-template-areas: 'A''C''B';
+            grid-template-columns: auto;
+            justify-content: center;
+
+            .imgCol {
+                justify-self: center;
+            }
+            .textList {
+                justify-self: center;
+            }
+
+        }
+        @media (max-width: 1000px){
+            .textBoxA {
+                h2 {
+                    font-size: 4em;
+                }
+            }
+            .textList {
+                width: unset;
+            }
+        }
+        @media (max-width: 900px){
+            width: 85%;
+        }
+
+        @media (max-width: 700px){
+            .textBoxA {
+                h2 {
+                    font-size: 3.5em;
+                }
+            }
+            .textList {
+                h6 {
+                    font-size: 2.5em;
+                }
+            }
+            .tooltip {
+                top: 0;
+                left: 0;
+                transform: unset;
+            }
+        }
+        @media (max-width: 500px){
+            width: 95%;
+            .textBoxA {
+                h2 {
+                    font-size: 3em;
+                }
+            }
+            .textList {
+                width: 100%;
+                h6 {
+                    font-size: 2em;
+                }
+            }
+            .imgCol {
+                width: 100% ;
+     
+            }
+            .tooltip {
+                font-size: 9px;
+                padding-left: 1.6em;
+                padding-top: 1.6em;
+                padding-bottom: 1.5em;
+                padding-right: 2.6em;
+            }
+        }
+        @media (max-width: 450px){
+            .textList {
+                font-size: 8px;
+                h6 {
+                    // font-size: 1.5em;
+                }
+            }
+            .textBoxA {
+                h2 {
+                    font-size: 2.3em;
+                }
+            }
+            .tooltip {
+                .percent {
+                    font-size: 4em;
+                }
+            }
+        }
+
+    }
+    @media (max-width: 1200px){
+        padding-top: 10em;
+        padding-bottom: 10em;
+    }
+    @media (max-width: 1000px){
+        padding-top: 8em;
+        padding-bottom: 8em;
+    }
+    @media (max-width: 500px){
+        padding-top: 5em;
+        padding-bottom: 5em;
+    }
+
+
+}

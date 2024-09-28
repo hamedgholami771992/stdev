@@ -1,0 +1,68 @@
+@import "@/styles/main.scss";
+
+
+.cardC {
+    padding-top: 3.6em;
+    padding-bottom: 4em;
+    padding-left: 4em;
+    padding-right: 4em;
+
+    &:hover {
+        box-shadow: 0px 4.32px 64.87px 0px #00000014;
+    }
+
+
+    @at-root .row1 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        @at-root .imgBox {
+            width: 7em;
+            height: 7em;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+
+            @at-root .img {
+                width: 100%;
+            }
+        }
+        @at-root .personal {
+            margin-left: 2.4em;
+            @at-root .name {
+                @include typo($font-family: $font-inter,
+                $font-size: 2em,
+                $line-height: 1.5em,
+                $text-align: left,
+                $font-weight: 700,
+                $color: #141f39,
+                );
+            }
+
+            @at-root .career {
+                @include typo($font-family: $font-inter,
+                $font-size: 1.4em,
+                $line-height: 1.71em,
+                $text-align: left,
+                $font-weight: 400,
+                $color: #141f39,
+                );
+                opacity: 70%;
+
+            }
+        }
+
+        @at-root .desc {
+            @include typo($font-family: $font-inter,
+            $font-size: 1.8em,
+            $line-height: 1.55em,
+            $text-align: left,
+            $font-weight: 400,
+            $color: #141f39,
+            );  
+            margin-top: 1.11em;
+            // max-width: 
+        }
+    }
+}

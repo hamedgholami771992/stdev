@@ -1,0 +1,196 @@
+@import '@/styles/main.scss';
+
+
+.people {
+    background-color: white;
+    padding-top: 12em;
+    padding-bottom: 12em;
+
+    @at-root .container {
+        display: flex;
+        width: 79.75%;
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        @at-root .textBox {
+
+            h4 {
+                @include typo($font-family: $font-jakarta,
+                    $font-size: 4.8em,
+                    $line-height: 1.4em,
+                    $text-align: center,
+                    $font-weight: 700,
+                    $color: #141f39,
+                    $letter-spacing: -1px);
+            }
+
+            p {
+                @include typo($font-family: $font-inter,
+                    $font-size: 1.6em,
+                    $line-height: 1.6em,
+                    $text-align: center,
+                    $font-weight: 400,
+                    $color: #141f39,
+                    $letter-spacing: -1px);
+                margin-top: 1em;
+                width: 35ch;
+            }
+        }
+
+        @at-root .carouselSpot {
+            margin-top: -5em;
+            width: 100%;
+            display: flex;
+            // overflow: hidden;
+            grid-template-columns: repeat(3, 1fr);
+
+            @at-root .cardSpot {
+                width: 41.6em;
+            }
+        }
+
+        @media (max-width: 1400px) {
+            .carouselSpot {
+                display: block;
+                margin-top: 0;
+
+                &>div>div:nth-child(2) {
+                    display: grid;
+                    grid-template-areas: 'A A'
+                        'B C';
+                    grid-template-columns: repeat(2, 1fr);
+                    justify-content: center;
+                    margin-top: 3em;
+
+
+                    &>div {
+                        max-width: 45em;
+                        align-self: stretch;
+
+                        &>div {
+                            height: 100%;
+                        }
+                    }
+
+                    &>div:nth-child(1) {
+                        grid-area: A;
+                        justify-self: center;
+
+                    }
+
+                    &>div:nth-child(2) {
+                        grid-area: B;
+
+                    }
+
+                    &>div:nth-child(3) {
+                        grid-area: C;
+
+                    }
+
+                }
+
+
+
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .textBox {
+                h4 {
+                    font-size: 4em;
+                }
+            }
+            .carouselSpot {
+                margin-top: 2em;
+                &>div>div:nth-child(2) {
+                    margin-top: 1em;
+                    display: grid;
+                    grid-template-areas: 'A A'
+                        'B B'
+                        'C C';
+                    grid-template-columns: repeat(2, 1fr);
+    
+                    &>div {
+                        // max-width: 45em;
+                        // align-self: stretch;
+    
+                        &>div {
+                            // height: 100%;
+                        }
+                    }
+    
+                    &>div:nth-child(1) {
+                        justify-self: start;
+                    }
+    
+                    &>div:nth-child(2) {
+                        justify-self: end;
+                    }
+    
+                    &>div:nth-child(3) {
+                        justify-self: start;
+                    }
+    
+                }
+            }
+        }
+        @media (max-width: 900px){
+            width: 85%;
+        }
+        @media (max-width: 700px) {
+            .textBox {
+                h4 {
+                    font-size: 3.5em;
+                }
+            }
+        }
+        @media (max-width: 500px) {
+            width: 95%;
+            .textBox {
+                h4 {
+                    font-size: 3em;
+                }
+            }
+
+            .carouselSpot {
+                margin-top: 2em;
+                width: 100%;
+                &>div>div:nth-child(2) {
+                    margin-top: 1em;
+                    display: grid;
+                    grid-template-areas: 'A A'
+                        'B B'
+                        'C C';
+                    grid-template-columns: repeat(2, 1fr);
+    
+                    &>div {
+                        max-width: unset;
+                        // align-self: stretch;
+    
+
+                    }
+    
+    
+                   
+    
+                }
+            }
+        }
+    }
+    @media (max-width: 1200px){
+        padding-top: 10em;
+        padding-bottom: 10em;
+    }
+    @media (max-width: 1000px){
+        padding-top: 8em;
+        padding-bottom: 8em;
+    }
+    @media (max-width: 500px){
+        padding-top: 5em;
+        padding-bottom: 5em;
+    }
+}

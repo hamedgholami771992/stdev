@@ -1,0 +1,192 @@
+@import '@/styles/main.scss';
+
+
+
+.grow {
+    background-color: #FAFAFA;
+    padding-top: 12em;
+    padding-bottom: 12em;
+
+    @at-root .container {
+        width: 63%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        @at-root .textBoxA {
+            color: #141f39;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+
+            h2 {
+                @include typo($font-family: $font-jakarta,
+                    $font-size: 4.8em,
+                    $line-height: 1.4em,
+                    $text-align: center,
+                    $font-weight: 700,
+                    $color: inherit);
+            }
+
+            p {
+                @include typo($font-family: $font-inter,
+                    $font-size: 1.6em,
+                    $line-height: 1.6em,
+                    $text-align: center,
+                    $font-weight: 400,
+                    $color: inherit);
+                margin-top: 1em;
+                opacity: 70%;
+                max-width: 52ch;
+            }
+        }
+
+        @at-root .cardsRow {
+            margin-top: 6.4em;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 3em;
+
+            @at-root .cardSpot {
+                min-width: 37em;
+                max-width: 40em;
+            }
+        }
+
+        @at-root .textBoxB {
+            @include typo($font-family: $font-inter,
+                $font-size: 1.6em,
+                $line-height: 1.5em,
+                $text-align: center,
+                $font-weight: 400,
+                $color: #141f39);
+            margin-top: 6em;
+
+            span {
+                @include typo($font-family: $font-inter,
+                    $font-size: 1.25em,
+                    $line-height: 1.2em,
+                    $text-align: center,
+                    $font-weight: 700,
+                    $color: #141f39);
+            }
+        }
+
+        @media (max-width: 1328px){
+            .cardsRow {
+                display: grid;
+                grid-template-areas: '. A B . ''. C C .';
+                justify-content: center;
+
+                .cardSpot {
+                    &:nth-child(1){
+                        grid-area: A;
+                    }
+                    &:nth-child(2){
+                        grid-area: B;
+                    }
+                    &:nth-child(3){
+                        grid-area: C;
+                        justify-self: center;
+                    }
+                }
+            }
+        }
+        @media (max-width: 1000px){
+            .textBoxA {
+                h2 {
+                    font-size: 4em;
+                }
+            }
+        }
+        @media (max-width: 900px){
+            width: 85%;
+            .cardsRow {
+                display: grid;
+                width: 100%;
+                grid-template-areas: 'A''B''C';
+                // gap: 1.5em;
+                grid-template-columns: 1fr;
+                row-gap: 1.5em;
+                .cardSpot:nth-child(1){
+                    grid-area: A;
+                    justify-self: end;
+                }
+                .cardSpot:nth-child(2){
+                    grid-area: B;
+                    justify-self: start;
+                }
+                .cardSpot:nth-child(3){
+                    grid-area: C;
+                    justify-self: end;
+                }
+            }
+            .textBoxB {
+                margin-top: 3em;
+            }
+        }
+        @media (max-width: 700px){
+            .textBoxA {
+                h2 {
+                    font-size: 3.5em;
+                }
+            }
+        }
+      
+        @media (max-width: 500px){
+            width: 95%;
+            .textBoxA {
+                h2 {
+                    font-size: 3em;
+                }
+            }
+            .cardsRow {
+                .cardSpot {
+                    width: 100%;
+                    min-width: unset;
+                    max-width: unset;
+                    justify-self: stretch;
+
+                    & > * {
+                        padding-top: 3.2em;
+                        padding-left: 2.5em;
+                        padding-right: 2.5em;
+                        padding-bottom: 3.3em; 
+                    }
+                    
+                }
+            }
+        }
+        @media (max-width: 500px){
+            width: 95%;
+            .textBoxA {
+                h2 {
+                    font-size: 3em;
+                }
+            }
+            .textBoxB {
+                max-width: 40ch;
+            }
+        }
+
+
+    }
+
+    @media (max-width: 1200px){
+        padding-top: 10em;
+        padding-bottom: 10em;
+    }
+    @media (max-width: 1000px){
+        padding-top: 8em;
+        padding-bottom: 8em;
+    }
+    @media (max-width: 500px){
+        padding-top: 5em;
+        padding-bottom: 5em;
+    }
+}

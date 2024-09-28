@@ -1,0 +1,218 @@
+@import '@/styles/main.scss';
+
+
+
+
+
+.header {
+    background-color: $primary-color;
+    padding-top: 5em;
+    padding-bottom: 10em;
+    @at-root .container {
+        width: 76%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+
+        @at-root .textBox {
+            max-width: 68.3em;   //683px;
+            position: relative;
+            z-index: 0;
+            h1 {
+                @include typo($font-family: $font-jakarta,
+                    $font-size: 7em,
+                    $line-height: 1.2em,
+                    $text-align: center,
+                    $color: white,
+                    $font-weight: 700);
+
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: -0.4em; //-18px
+                    left: 0em; //28px
+                    z-index: -1;
+                    background: url('../../images/khal1.svg');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: cover;
+                    width: 4.085em; //286px
+                    height: 3.21em; //225px
+
+                }
+
+            }
+
+            p {
+                @include typo($font-family: $font-inter,
+                    $font-size: 1.8em,
+                    $line-height: 1.6em,
+                    $text-align: center,
+                    $color: white,
+                    $font-weight: 400);
+                padding-left: 2em;
+                padding-right: 2em;
+                margin-top: 0.88em;
+                opacity: 70%;
+            }
+        }
+
+        @at-root .btnRow {
+            margin-top: 4.3em;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 3.2em;
+
+            @at-root .btnSpot {
+                width: 20em;
+                height: 6em;
+                font-family: $font-inter;
+            }
+        }
+
+        @at-root .legends {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 2em;
+            margin-top: 4em;
+
+            @at-root .legendItem {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 0.5em;
+
+                .img {
+
+                }
+
+                .text {
+                    @include typo($font-family: $font-inter,
+                    $font-size: 1.6em,
+                    $line-height: 1.5em,
+                    $text-align: center,
+                    $color: white,
+                    $font-weight: 400);
+                    opacity: 60%;
+                }
+            }
+        }
+
+        @at-root .cardsRow {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 3em;
+            margin-top: 6em;
+
+            @at-root .cardSpot {
+                width: 37em;
+            }
+        }
+
+
+        @media (max-width: 1282px){
+            .cardsRow {
+                display: grid;
+                grid-template-areas: 'A A B B'
+                                    '. C C .';
+
+                .cardSpot {
+                    &:nth-child(1){
+                        grid-area: A;
+                    }
+                    &:nth-child(2){
+                        grid-area: B;
+                    }
+                    &:nth-child(3){
+                        grid-area: C;
+                    }
+                }
+            }
+        }
+        @media (max-width: 1000px){
+            .textBox {
+                h1 {
+                    font-size: 5em;
+                }
+            }
+        }
+        @media (max-width: 900px){
+            width: 85%;
+            .cardsRow {
+                grid-template-areas: 'A''B''C';
+                column-gap: 2em;
+                width: 100%;
+                grid-template-columns: 1fr;
+                .cardSpot:nth-child(1) {
+                    justify-self: start;
+                }
+                .cardSpot:nth-child(2) {
+                    justify-self: end;
+                }
+                .cardSpot:nth-child(3) {
+                    justify-self: start;
+                }
+             
+            }
+            .legends {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        @media (max-width: 700px){
+            .textBox {
+                h1 {
+                    font-size: 4em;
+                }
+            }
+     
+        }
+        @media (max-width: 620px){
+            .btnRow {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5em;
+            }
+            .textBox {
+                h1 {
+                    font-size: 4em;
+                }
+            }
+        }
+        @media (max-width: 500px){
+            width: 95%;
+            .textBox {
+                h1 {
+                    font-size: 3.5em;
+                }
+            }
+            .cardsRow {
+                .cardSpot {
+                    width: 100%;
+                }
+            }
+ 
+        }
+ 
+       
+    }
+    @media (max-width: 1200px){
+        padding-top: 10em;
+        padding-bottom: 10em;
+    }
+    @media (max-width: 1000px){
+        padding-top: 8em;
+        padding-bottom: 8em;
+    }
+    @media (max-width: 500px){
+        padding-top: 5em;
+        padding-bottom: 5em;
+    }
+}

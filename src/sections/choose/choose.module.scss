@@ -1,0 +1,314 @@
+@import '@/styles/main.scss';
+
+
+
+
+.choose {
+    padding-top: 12em;
+    padding-bottom: 12em;
+    background-color: #FAFAFA;
+    border: 3px solid white;
+    
+
+    @at-root .container {
+        width: 72.3%;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-areas: 'A A cardA .'
+            'A A cardA cardB'
+            'B B cardC cardB'
+            'B B cardC cardD'
+            '. . . cardD';
+        grid-template-rows: 8em subgrid 6em min-content;
+        grid-template-columns: 1fr min-content min-content min-content;
+        column-gap: 2.9em;
+        row-gap: 3em;
+
+
+        @at-root .textBox {
+            grid-area: A;
+            width: 91ch;
+
+            h3 {
+                @include typo($font-family: $font-jakarta,
+                    $font-size: 4.8em,
+                    $line-height: 1.4em,
+                    $font-weight: 700,
+                    $letter-spacing: -1px,
+                    $text-align: left,
+                    $color: #141f39);
+            }
+
+            p {
+                @include typo($font-family: $font-inter,
+                    $font-size: 1.6em,
+                    $line-height: 1.6em,
+                    $font-weight: 400,
+                    $letter-spacing: -1px,
+                    $text-align: left,
+                    $color: #141f39);
+                opacity: 70%;
+                margin-top: 1em;
+            }
+        }
+
+        @at-root .members {
+            grid-area: B;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            align-self: start;
+
+            @at-root .images {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                @at-root .imgSpot {
+                    position: relative;
+                    width: 6.05em;
+                    height: 6.05em;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    border: 3px solid white;
+
+                    &:not(:last-child) {
+                        margin-right: -2em;
+                    }
+
+                    @at-root .imgd {}
+                }
+            }
+
+            @at-root .text {
+                margin-left: 2.04em;
+
+                @at-root .bold {
+                    @include typo($font-family: $font-inter,
+                        $font-size: 2.4em,
+                        $line-height: 1.16em,
+                        $font-weight: 700,
+                        $letter-spacing: -1px,
+                        $text-align: left,
+                        $color: #141f39);
+
+                }
+
+                @at-root .normal {
+                    @include typo($font-family: $font-inter,
+                        $font-size: 1.6em,
+                        $line-height: 1.5em,
+                        $font-weight: 400,
+                        $letter-spacing: -1px,
+                        $text-align: left,
+                        $color: #141f39);
+                    opacity: 60%;
+                    margin-top: 2px;
+
+                }
+            }
+        }
+
+        // @at-root .cards {
+
+        @at-root .cardSpot {
+            background-color: red;
+            align-self: start;
+            justify-self: end;
+            width: 27em;
+
+            &>div {
+                padding-top: 3.2em;
+                padding-left: 2.5em;
+                padding-right: 2.4em;
+                padding-bottom: 2.5em;
+
+                & > h4 {
+                    margin-top: 1.14em;
+                }
+                & > div::after {
+                    width: 2.4em;
+                    height: 2.4em;
+                }
+            }
+
+
+            &A {
+                grid-area: cardA;
+
+                & > div {
+                    & > div::after {
+                        opacity: 70%;
+                        background-color: #ff928A;
+                        transform: translate(20%, 20%);
+                    }
+                }
+            }
+
+            &B {
+                grid-area: cardB;
+
+                & > div {
+                    & > div::after {
+                        opacity: 70%;
+                        background-color: #7CE8FF;
+                        transform: unset;
+                    }
+                }
+            }
+
+            &C {
+                grid-area: cardC;
+                & > div {
+                    & > div::after {
+                        background-color: #7CE8FF;
+                        // transform: unset;
+                    }
+                }
+            }
+
+            &D {
+                grid-area: cardD;
+
+                & > div {
+                    & > div::after {
+                        background-color: #ff928A;
+                        transform: translate(10%, 10%);
+                        opacity: 40%;
+                    }
+                }
+            }
+        }
+
+        // }
+        @media (max-width: 1463px) {
+            grid-template-areas: 'A A cardA'
+                'A A cardA'
+                'B B cardC'
+                'cardD cardB cardC'
+                'cardD cardB .';
+            grid-template-rows: 8em subgrid 6em min-content;
+            grid-template-columns: 1fr min-content min-content;
+        }
+
+        @media (max-width: 1205px) {
+            .cardSpot {
+                width: 22em;
+            }
+        }
+        
+        @media (max-width: 1000px) {
+            
+            justify-content: center;
+            grid-template-areas: 'A A'
+                'A A'
+                'B B'
+                'cardA cardB'
+                'cardA cardB'
+                'cardC cardD'
+                'cardC cardD';
+            grid-template-rows: 8em subgrid 6em min-content;
+            grid-template-columns: 1fr 1fr;
+
+            @at-root .textBox {
+                justify-self: center;
+
+                h3 {
+                    font-size: 4em;
+                    text-align: center;
+                }
+
+                p {
+                    text-align: center;
+                }
+            }
+
+            @at-root .members {
+                justify-self: center;
+            }
+
+            @at-root .cardSpot {
+                width: 27em !important;
+                &A {
+                    justify-self: end;
+                }
+
+                &B {
+                    justify-self: start;
+                }
+
+                &C {
+                    justify-self: end;
+                }
+
+                &D {
+                    justify-self: start;
+                }
+            }
+        }
+        @media (max-width: 900px) {
+            width: 85%;
+        }
+        @media (max-width: 700px) {
+            grid-template-areas: 'A'
+                'B'
+                'cardA'
+                'cardB'
+                'cardC'
+                'cardD';
+            grid-template-rows: unset;
+            grid-template-columns: 1fr;
+            row-gap: 1em;
+
+            @at-root .textBox {
+                width: unset;
+
+                h3 {
+                  font-size: 3.5em;;
+                }
+
+                p {
+                    
+                }
+            }
+        }
+        @media (max-width: 500px) {
+            width: 95%;
+            @at-root .textBox {
+                h3 {
+                  font-size: 3em;
+                }
+
+                p {
+                    
+                }
+            }
+           .members {
+            margin-bottom: 2em;
+           }
+            .cardSpot {
+                width: 100% !important;
+
+               
+             
+            }
+        }
+        @media (max-width: 400px) {
+
+
+        }
+    }
+    @media (max-width: 1200px){
+        padding-top: 10em;
+        padding-bottom: 10em;
+    }
+    @media (max-width: 1000px){
+        padding-top: 8em;
+        padding-bottom: 8em;
+    }
+    @media (max-width: 500px){
+        padding-top: 5em;
+        padding-bottom: 5em;
+    }
+}

@@ -1,0 +1,267 @@
+@import '@/styles/main.scss';
+
+
+
+.security {
+    padding-top: 12em;
+    padding-bottom: 8em;
+
+    @at-root .container {
+        width: 68%;
+        max-width: 110em;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-areas: 'A A A''B . C';
+        grid-template-columns: max-content auto 1fr;
+
+        @at-root .textBoxA {
+            grid-area: A;
+            padding-bottom: 4.79em;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            h3 {
+                @include typo($font-family: $font-jakarta,
+                    $font-size: 4.8em,
+                    $line-height: 1.4em,
+                    $font-weight: 700,
+                    $letter-spacing: -1px,
+                    $text-align: left,
+                    $color: #141f39);
+                max-width: 16.7em;
+            }
+
+            p {
+                @include typo($font-family: $font-inter,
+                    $font-size: 1.6em,
+                    $line-height: 1.6em,
+                    $font-weight: 400,
+                    $text-align: left,
+                    $color: #141f39);
+                margin-top: 1.6em;
+                max-width: 50ch;
+            }
+        }
+
+        @at-root .textBoxB {
+            grid-area: B;
+            display: flex;
+            flex-direction: column;
+            gap: 3.2em;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 46.7em;
+            padding-top: 6.4em;
+            border-top: 1px solid #D4D4D8;
+
+
+            @at-root .textBItem {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                h4 {
+                    @include typo($font-family: $font-jakarta,
+                        $font-size: 3.2em,
+                        $line-height: 1.4em,
+                        $font-weight: 700,
+                        $letter-spacing: -1px,
+                        $text-align: left,
+                        $color: #141f39);
+                    position: relative;
+
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        z-index: -1;
+                        width: 2.56em;
+                        height: 2.02em;
+
+                    }
+                }
+
+                p {
+                    @include typo($font-family: $font-inter,
+                        $font-size: 1.6em,
+                        $line-height: 1.6em,
+                        $font-weight: 400,
+                        $text-align: left,
+                        $color: #141f39);
+                    margin-top: 0.5em;
+                }
+
+                @at-root .textBItem1 {
+                    h4::after {
+                        background: url('../../images/khal2.png');
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center center;
+                        top: 0;
+                        left: 0;
+                        transform: translate(-0.5em, -0.3em) scale(1.2);
+                    }
+                }
+
+                @at-root .textBItem2 {
+                    h4::after {
+                        background: url('../../images/khal1.svg');
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center center;
+                        opacity: 50%;
+                        top: 0;
+                        left: 0;
+                        transform: translate(-0.5em, -0.3em);
+                    }
+                }
+            }
+        }
+
+        @at-root .cards {
+            grid-area: C;
+            justify-self: end;
+            position: relative;
+            top: -10em;
+
+            @at-root .circle {
+                width: 45em;
+                height: 45em;
+                border-radius: 50%;
+                background-color: #E3FAFF;
+                position: relative;
+                z-index: 0;
+
+
+                @at-root .cardA {
+                    position: absolute;
+                    z-index: 2;
+                    transform: translate(9em, 18em);
+                }
+
+                @at-root .cardB {
+                    position: absolute;
+                    z-index: 1;
+                    transform: rotateZ(19deg) translate(-1em, 2em);
+                }
+            }
+
+        }
+
+        @media (max-width: 1386px) {
+            width: 80%;
+        }
+
+        @media (max-width: 1171px) {
+            .cards {
+                font-size: 8px;
+            }
+        }
+       
+
+        @media (max-width: 1000px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+
+            .textBoxA {
+                align-items: center;
+                h3 {
+                    font-size: 4em;
+                    text-align: center;
+                }
+
+                p {
+                    text-align: center;
+                }
+            }
+            .textBoxB {
+                align-items: center;
+
+                .textBItem {
+                    align-items: center;
+                    h4 {
+                        font-size: 3em;
+                        text-align: center;
+                        // display: inline-block;
+                        
+                        &::after {
+                            transform: translate(1.5em, -0.1em) scale(1.2);
+                        }
+                    }
+                    p {
+                        text-align: center !important;
+                    }
+    
+    
+                }
+            }
+
+
+            .cards {
+                top: unset;
+                margin-top: 6em;
+            }
+        }
+        @media (max-width: 700px){
+            .textBoxA {
+                
+                h3 {
+                    font-size: 3.5em;
+                }
+            }
+            .textBItem {
+                width: unset;
+                h4 {
+                    font-size: 2.5em;
+                 
+                }
+            }
+        }
+        @media (max-width: 600px){
+            width: 95%;
+  
+            .cards {
+                left: -2em;
+                font-size: 6px;
+            }
+        }
+        @media (max-width: 500px){
+            .textBoxA {
+                
+                h3 {
+                    font-size: 3em;
+                }
+            }
+            .textBoxB {
+                width: unset;
+            }
+        }
+        @media (max-width: 400px){
+            .circle{
+                width: 30em;
+                height: 30em;
+            }
+        }
+    }
+
+    @media (max-width: 1200px){
+        padding-top: 10em;
+        padding-bottom: 10em;
+    }
+    @media (max-width: 1000px){
+        padding-top: 8em;
+
+    }
+    @media (max-width: 500px){
+        padding-top: 5em;
+
+    }
+
+}

@@ -1,0 +1,126 @@
+@import '@/styles/main.scss';
+
+
+.ready {
+    padding-top: 12em;
+    padding-bottom: 12em;
+    background-color: white;
+
+    @at-root .container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+
+        @at-root .textBox {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            h3 {
+                @include typo($font-family: $font-jakarta,
+                $font-size: 4.8em,
+                $line-height: 1.4em,
+                $font-weight: 700,
+                $letter-spacing: -1px,
+                $text-align: center,
+                $color: #141f39);
+                width: 20ch;
+            }
+            p {
+                @include typo($font-family: $font-inter,
+                $font-size: 1.6em,
+                $line-height: 1.6em,
+                $font-weight: 400,
+                $letter-spacing: -1px,
+                $text-align: center,
+                $color: #141f39);
+                opacity: 70%;
+                margin-top: 1em;
+                width: 43ch;
+            }
+        }
+
+        @at-root .inputBox {
+            margin-top: 4em;
+            width: 52.6em;
+            height: 6.5em;
+        }
+        @at-root .signIn {
+            margin-top: 4em;
+
+            .text {
+                @include typo($font-family: $font-inter,
+                $font-size: 1.6em,
+                $line-height: 1.6em,
+                $font-weight: 400,
+                $letter-spacing: -1px,
+                $text-align: center,
+                $color: #141f39);
+                
+                span {
+                    font-weight: 700;
+                    margin-left: 0.5em;
+                    cursor: pointer;
+                }
+            }
+        }
+        @media (max-width: 1000px){
+            .textBox {
+                h3 {
+                    font-size: 4em;
+                }
+            }
+
+        }
+        @media (max-width: 900px){
+            width: 85%;
+
+        }
+        @media (max-width: 700px){
+            .textBox {
+                h3 {
+                    font-size: 3.5em;
+                    width: unset;
+                }
+                p {
+                    width: unset;
+                }
+            }
+            .inputBox {
+                width: 100%;
+            }
+        }
+        @media (max-width: 500px){
+            width: 95%;
+            .textBox {
+                h3 {
+                    font-size: 3em;
+                    
+                }
+            }
+        }
+     
+    }
+
+
+    @media (max-width: 678px){
+        .inputBox {
+            font-size: 9px;
+        }
+    }
+    @media (max-width: 1200px){
+        padding-top: 10em;
+        padding-bottom: 10em;
+    }
+    @media (max-width: 1000px){
+        padding-top: 8em;
+        padding-bottom: 8em;
+    }
+    @media (max-width: 500px){
+        padding-top: 5em;
+        padding-bottom: 5em;
+    }
+}
