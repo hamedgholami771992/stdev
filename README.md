@@ -1,5 +1,12 @@
 ## Getting Started
-first install dependencies
+change the branch to master
+```bash
+git checkout master
+
+```
+
+
+install dependencies
 ```bash
 npm i
 
