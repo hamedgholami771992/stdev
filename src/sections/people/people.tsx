@@ -35,7 +35,7 @@ const People: React.FC = () => {
                                 desc: "Project to be a team's best option for project management, but when all the stars align, it's a powerful tool.",
                                 profession: "Web Developer",
                                 name: "Jenny Wilson",
-                                img: Images.Lady2
+                                img: Images.Man4
                             },
                             {
                                 desc: "We test and compare the best project management software for collaborating with a team, hitting deadlines.",
